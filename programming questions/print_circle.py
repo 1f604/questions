@@ -4,7 +4,7 @@
 import sys
 import math
 import time
-radius = 4800
+radius = 15
 min_radius=12
 
 def circle():

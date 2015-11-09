@@ -1,4 +1,6 @@
-#written on 8th November 2015
+#written on 9th November 2015
+#see https://en.wikipedia.org/wiki/Ergodic_process
+#due to its fractal nature, St Petersburg gamble is not ergodic - average payoff increases (logarithmically?) with more games played.
 n=100000000
 import random
 import math

@@ -15,7 +15,7 @@ stdvs=[]
 means=[]
 k=1
 while(k<n):
-    k*=10
+    k*=2
     total = 0
     for j in range(k):
         total+=toss()

@@ -2,8 +2,7 @@
 #enter patterns and number of nodes
 import itertools
 patterns = [(1,0,0),(0,1,0)]
-pattern_length = 3
-numnodes = 3
+numnodes = 3 #pattern size is same as number of nodes
 
 weight = {}
 threshold = {}

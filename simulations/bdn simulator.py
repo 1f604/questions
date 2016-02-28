@@ -6,7 +6,7 @@ class BDN(object):
         self.hidden = hidden
         self.output = output
     def process(self,inputs):
-        return '\n'.join([str(i)+str(output.isfired(hiddens.fire(i))) for i in inputs])
+        return '\n'.join([str(i)+str(self.output.isfired(self.hidden.fire(i))) for i in inputs])
 
 class hiddenlayer(object):
     def __init__(self,hs):

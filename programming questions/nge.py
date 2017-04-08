@@ -51,6 +51,7 @@ def distanceToNextGreater(A):
                 
                 
 assert(nextGreater([1])) == [-1]
+assert(distanceToNextGreater([1])) == [-1]
 assert(nextGreater([4, 5, 2, 10])) == [5, 10, 10, -1]
 assert(distanceToNextGreater([4, 5, 2, 10])) == [1,2,1, -1]
 assert(nextGreater([11,13,21,3])) == [13, 21, -1, -1]

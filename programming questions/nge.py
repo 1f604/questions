@@ -50,18 +50,31 @@ def distanceToNextGreater(A):
     return r
                 
                 
-assert(nextGreater([1])) == [-1]
-assert(distanceToNextGreater([1])) == [-1]
-assert(nextGreater([4, 5, 2, 10])) == [5, 10, 10, -1]
-assert(distanceToNextGreater([4, 5, 2, 10])) == [1,2,1, -1]
-assert(nextGreater([11,13,21,3])) == [13, 21, -1, -1]
-assert(distanceToNextGreater([11,13,21,3])) == [1, 1, -1, -1]
-assert(nextGreater([13, 7, 6, 12])) == [-1, 12, 12,-1]
-assert(distanceToNextGreater([13, 7, 6, 12])) == [-1, 2, 1,-1]
-assert(nextGreater([5, 9, 3, 5, 4])) == [9, -1, 5, -1, -1]
-assert(distanceToNextGreater([5, 9, 3, 5, 4])) == [1, -1, 1, -1, -1]
-assert(nextGreater([3, 2, 1])) == [-1, -1, -1] 
-assert(distanceToNextGreater([3, 2, 1])) == [-1, -1, -1] 
-assert(nextGreater([40,50,11,32,55,68,75])) == [50,55,32,55,68,75,-1] 
-assert(distanceToNextGreater([40,50,11,32,55,68,75])) == [1,3,1,1,1,1,-1] 
+def test(func, case):
+        for inp, out in case:
+            assert func(inp) == out, "expected "+str(inp)+" should give output "+str(out)
+
+testcases1 = [   
+([1], [-1]),
+([4, 5, 2, 10], [5, 10, 10, -1]),
+([11,13,21,3],[13, 21, -1, -1]),
+([13, 7, 6, 12],[-1, 12, 12,-1]),
+([5, 9, 3, 5, 4],[9, -1, 5, -1, -1]),
+([3, 2, 1], [-1, -1, -1] ),
+([40,50,11,32,55,68,75],[50,55,32,55,68,75,-1] )
+]
+
+testcases2 = [  
+([1],[-1]),
+([4, 5, 2, 10],[1,2,1, -1]),
+([11,13,21,3],[1, 1, -1, -1]),
+([13, 7, 6, 12], [-1, 2, 1,-1]),
+([5, 9, 3, 5, 4], [1, -1, 1, -1, -1]),
+([3, 2, 1], [-1, -1, -1] ),
+([40,50,11,32,55,68,75], [1,3,1,1,1,1,-1])
+]
+
+test(nextGreater, testcases1)
+test(distanceToNextGreater, testcases2) 
+
 print("All good!")

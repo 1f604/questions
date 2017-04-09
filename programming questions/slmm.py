@@ -1,3 +1,5 @@
+#sliding window min/max 
+
 from collections import deque
 from operator import le, ge
 class dq(deque):

@@ -1,5 +1,3 @@
-#sliding window min/max 
-
 from collections import deque
 from operator import le, ge
 class dq(deque):
@@ -33,8 +31,8 @@ def slidingWindowMinMax(arr, k):
     for i, v in enumerate(arr): 
         for q in [minq,maxq]:
             popoutofwindow(q, i, k) 
-        deleteUntilInsert(minq,i,v,ge)
-        deleteUntilInsert(maxq,i,v,le)
+        for q, op in [(minq, ge),(maxq, le)]:
+            deleteUntilInsert(q,i,v,op) 
         if i >= k-1: #remove this if statement for partial-window case (when you want min/max values from when full window size not reached)
             r.append((minq.getback()[1],maxq.getback()[1]))
             #uncomment lines as per your needs ;)
@@ -53,7 +51,7 @@ testcases = [
 (([5.5, 6.0, 6.0, 6.5, 6.0, 5.5, 5.5, 5.0, 4.5],3), [(5.5, 6.0), (6.0, 6.5), (6.0, 6.5), (5.5, 6.5), (5.5, 6.0), (5.0, 5.5), (4.5, 5.5)]),
 (([2,1,3,4,6,3,8,9,10,12,56],4),[(1, 4), (1, 6), (3, 6), (3, 8), (3, 9), (3, 10), (8, 12), (9, 56)]),
 (([4,3,2,1,5,7,6,8,9],3), [(2, 4), (1, 3), (1, 5), (1, 7), (5, 7), (6, 8), (6, 9)]),
-(([11, -2, 5, 6, 0, 9, 8, -1, 2, 15],3), [(-2, 11), (-2, 6), (0, 6), (0, 9), (0, 9), (-1, 9), (-1, 8), (-1, 15)]), 
+(([11, -2, 1, 6, 0, 9, 8, -1, 2, 15],3), [(-2, 11), (-2, 6), (0, 6), (0, 9), (0, 9), (-1, 9), (-1, 8), (-1, 15)]), 
 ]
 
 

@@ -20,7 +20,7 @@ def popoutofwindow(q, i, k):
         q.popback()
         
 def deleteUntilInsert(q, i, v, op):
-    while q and op(q.getfront()[1], v):
+    while q and op(v,q.getfront()[1]):
         q.popfront()
     q.add((i,v))
      
@@ -31,7 +31,7 @@ def slidingWindowMinMax(arr, k):
     for i, v in enumerate(arr): 
         for q in [minq,maxq]:
             popoutofwindow(q, i, k) 
-        for q, op in [(minq, ge),(maxq, le)]:
+        for q, op in [(minq, le),(maxq, ge)]:
             deleteUntilInsert(q,i,v,op) 
         if i >= k-1: #remove this if statement for partial-window case (when you want min/max values from when full window size not reached)
             r.append((minq.getback()[1],maxq.getback()[1]))

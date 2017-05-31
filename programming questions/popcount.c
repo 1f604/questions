@@ -9,8 +9,8 @@ int popcount(int v){
 
 int main(void) {
 	int v;
-    printf("Please input an integer value: ");
-    scanf("%i", &v); 
+    	printf("Please input an integer value: ");
+    	scanf("%i", &v); 
 	printf("%i", popcount(v));
 	return 0;
 }

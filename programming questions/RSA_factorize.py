@@ -1,4 +1,5 @@
 # Factor N given e and d
+# Requires square_and_multiply.py to be in the same directory. 
 """
 Created on Wed Jun 14 22:28:59 2017
 
